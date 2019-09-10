@@ -1,11 +1,77 @@
+<!-- FeatherSoft EZCollect-->
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Sajan Paul Offical</title>
-  </head>
-  <body>
-    <h1> Sajan Paul Offical</h1>
+<html lang="en">
 
-  </body>
+	<head>
+		<title>EzCollect</title>
+
+		<link rel="manifest" href="manifest.json">
+
+		<meta name="application-name" content="EzCollect">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="utf-8">
+		<meta name="theme-color" content="#1976d2">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+
+		<link rel="icon" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="icon" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" sizes="48x48" href="favicon.ico">
+		<link rel="icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+		<link rel="icon" sizes="192x192" href="favicon/android-chrome-192x192.png">
+		<link rel="icon" sizes="512x512" href="favicon/android-chrome-512x512.png">
+
+		<link rel="apple-touch-icon" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="apple-touch-icon" sizes="48x48" href="favicon.ico">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="192x192" href="favicon/android-chrome-192x192.png">
+		<link rel="apple-touch-icon" sizes="512x512" href="favicon/android-chrome-512x512.png">
+
+
+
+		<link rel="stylesheet" href="assets/styles/main.css">
+		<script src="main.js"></script>
+		<script type="module" src="app/appconfig.js" async defer></script>
+	</head>
+
+	<body>
+		<header>
+			<button class="backbtn">
+				Back
+			</button>
+			<div class="logo">
+				<img class="logo-cntrl logo-icon" src="favicon/android-chrome-512x512.png" alt="">
+				<h1 class="logo-cntrl logo-icon-text">Collect</h1>
+			</div>
+
+			<div data-element="loader" class="loader">
+				<div class="ldr-ring">
+					<span  data-element="loader-text"class="ldr-text">100%</span>
+				</div>
+			</div>
+		</header>
+		<section id="installBanner" class="banner">
+			<button id="installBtn">+</button>
+			<label for="installBtn">Install app</label>
+		</section>
+		<main router-outlet></main>
+	</body>
+
+	<template template-name="list">
+		<section class="card">
+			<h4 ></h4>
+			<h4></h4>
+			<p>
+				Bavarian bergkase port-salut ricotta. Cheese on toast say cheese cheese
+				strings pecorino fromage frais roquefort danish fontina emmental.
+				Bishop everyone loves jarlsberg stilton swiss cauliflower cheese fondue
+				wiss. Cottage cheese lancashire taleggio goat parmesan.
+			</p>
+		</section>
+	</template>
+	<template template-name="view">
+		<p> view page </p>
+	</template>
+
 </html>

@@ -1,0 +1,232 @@
+@import "font.css";
+
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    justify-content: space-between;
+    margin: 0;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #f6f6f6;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+        0 3px 1px -2px rgba(0, 0, 0, .2),
+        0 1px 5px 0 rgba(0, 0, 0, .12);
+    box-sizing: border-box;
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    justify-content: space-between;
+    height: 76px;
+}
+
+
+
+section#installBanner label {
+    font-size: 19px;
+    color: #4d4a4a;
+}
+
+
+
+
+
+section#installBanner {
+    position: fixed;
+    background-color: #ffffff;
+    box-shadow: -1px -1px 6px 0px #5f5f5f;
+    width: 180px;
+    height: 50px;
+    bottom: 10px;
+    right: 10px;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+
+button#installBtn {
+    background-color: #209cee;
+    border: 1px solid #104568;
+    width: 35px;
+    height: 35px;
+    font-size: 30px;
+    line-height: 32px;
+    color: #ffffff;
+    border-radius: 50px;
+    outline: none;
+}
+
+.backbtn:hover,
+.backbtn:focus {
+    background-color: #286b97;
+    color: #e7e7e7;
+}
+
+.backbtn:active {
+    box-shadow: 0px 0px 4px 1px #286b97;
+}
+
+.backbtn {
+background-color: #209cee;
+border: none;
+outline: none;
+border-radius: 10px;
+width: 60px;
+height: 55px;
+color: white;
+font-size: 15px;
+transition: 200ms linear background-color;
+}
+
+.card {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+        0 3px 1px -2px rgba(0, 0, 0, .2),
+        0 1px 5px 0 rgba(0, 0, 0, .12);
+    margin: 20px;
+    max-width: 600px;
+    padding: 10px;
+}
+
+p {
+    padding: 10px;
+    text-align: center;
+}
+
+.img-container {
+    background-color: black;
+}
+
+.banner {
+    align-content: center;
+    /* display: none; */
+    /* justify-content: center; */
+    /* width: 100%; */
+}
+
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: black;
+    font-weight: bold;
+}
+
+.flex-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    width: 100%;
+}
+
+footer {
+    align-items: center;
+    background-color: #FF9800;
+    box-sizing: border-box;
+    display: flex;
+    height: 7vh;
+    justify-content: center;
+    min-height: 50px;
+    padding: 10px;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-self: center;
+}
+
+.logo .logo-cntrl {
+    padding: 0px 4px;
+    align-self: center;
+}
+
+.logo .logo-icon {
+    height: 50px;
+}
+
+.logo .logo-icon-text {
+    color: #209cee;
+    text-shadow: 1px 1px 1px #ffffff;
+    line-height: 50px;
+    font-family: 'Leckerli One';
+    font-size: 41px;
+    animation-name: float;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+
+.loader {
+    display: flex;
+}
+
+.loader .ldr-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: -18px;
+}
+
+.loader .ldr-ring:after {
+    content: " ";
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid #209cee;
+    border-color: #209cee transparent #209cee transparent;
+    animation: ldr-ring-animation 1.2s linear infinite;
+}
+
+.loader .ldr-text {
+    display: inline-block;
+    position: relative;
+    top: 36px;
+    left: 10px;
+    text-align: center;
+    font-size: 13px;
+    width: 40px;
+    color: #209cee;
+}
+
+@keyframes ldr-ring-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+        opacity: .7;
+    }
+
+    50% {
+        transform: translatey(-3px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translatey(0px);
+        opacity: 0.9;
+    }
+}
