@@ -1,0 +1,51 @@
+mtf-page-el {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+mtf-page-el .json-box {
+    background-color: pink;
+    grid-area: json;
+
+}
+
+mtf-page-el .mtf-wrapper {
+    grid-area: mtfw;
+}
+
+mtf-page-el .error-logger {
+    background-color: rgb(241, 7, 222);
+    grid-area: eror;
+
+}
+
+
+mtf-page-el.grid-parent {
+    grid-template-columns: 1fr 400px;
+    grid-template-rows: 1fr 600px 1fr 400px 1fr 400px;
+    grid-template-areas:
+        "mtfw mtfw"
+        "mtfw mtfw"
+        "json json"
+        "json json"
+        "eror eror"
+        "eror eror";
+}
+
+@media all and (min-width: 800px) {
+    mtf-page-el.grid-parent {
+        grid-template-columns: 1fr 400px 1fr 400px;
+        grid-template-rows: 1fr 400px 1fr 400px;
+        grid-template-areas:
+            "mtfw mtfw json json"
+            "mtfw mtfw json json"
+            "mtfw mtfw eror eror"
+            "mtfw mtfw eror eror"
+
+    }
+}
+mtf-page-el mtf-el{
+	display: block;
+}

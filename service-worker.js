@@ -2,8 +2,7 @@
 const staticCacheName = 'pages-cache-v1';
 const filesToCache = [
     'index.html',
-    'pages/offline.html',
-    'pages/404.html'
+    'assets/static-pages/offline.html'
 ];
 self.addEventListener('install', event => {
     console.log('Attempting to install service worker and cache static assets');
@@ -25,9 +24,6 @@ self.addEventListener('fetch', event => {
                 }
                 console.log('Network request for ', event.request.url);
                 return fetch(event.request).then(response => {
-                    if (response.status === 404) {
-                        return caches.match('pages/404.html');
-                    }
                     return caches.open(staticCacheName).then(cache => {
                         cache.put(event.request.url, response.clone());
                         return response;

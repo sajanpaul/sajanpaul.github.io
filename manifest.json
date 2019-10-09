@@ -1,39 +1,39 @@
 {
-	"name": "EzCollect",
-	"short_name": "Ez Capture data collection PWA",
+	"name": "Sajan Offical",
+	"short_name": "Offical site of Sajan paul",
 	"lang": "en-US",
 	"start_url": "/index.html",
 	"display": "standalone",
-	"theme_color": "#209CEE",
-	"background_color": "#209CEE",
+	"theme_color": "#71c9ce",
+	"background_color": "#e3fdfd",
 	"icons": [
 		{
-			"src": "favicon/favicon-16x16.png",
+			"src": "assets/appicon/favicon-16x16.png",
 			"sizes": "16x16",
 			"type": "image/png"
 		},
 		{
-			"src": "favicon/favicon-32x32.png",
+			"src": "assets/appicon/favicon-32x32.png",
 			"sizes": "32x32",
 			"type": "image/png"
 		},
 		{
-			"src": "favicon/favicon.ico",
+			"src": "assets/appicon/favicon.ico",
 			"sizes": "48x48",
 			"type": "image/x-icon"
 		},
 		{
-			"src": "favicon/apple-touch-icon.png",
+			"src": "assets/appicon/apple-touch-icon.png",
 			"sizes": "180x180",
 			"type": "image/png"
 		},
 		{
-			"src": "favicon/android-chrome-192x192.png",
+			"src": "assets/appicon/android-chrome-192x192.png",
 			"sizes": "192x192",
 			"type": "image/png"
 		},
 		{
-			"src": "favicon/android-chrome-512x512.png",
+			"src": "assets/appicon/android-chrome-512x512.png",
 			"sizes": "512x512",
 			"type": "image/png"
 		}

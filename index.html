@@ -2,76 +2,65 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<title>EzCollect</title>
+<head>
+	<title>Sajan Paul Offical</title>
 
-		<link rel="manifest" href="manifest.json">
+	<link rel="manifest" href="./manifest.json">
+	<script src="./script/configration.js"></script>
+	<script src="./script/web-initializer.js"></script>
+	<script type="module" src="./script/app-initializer.js" defer></script>
 
-		<meta name="application-name" content="EzCollect">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta charset="utf-8">
-		<meta name="theme-color" content="#1976d2">
-		<meta name="mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Sajan Paul Offical">
+	<meta name="Description" content="Offical Website of Sajan Paul">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<meta name="theme-color" content="#1976d2">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
 
-		<link rel="icon" sizes="16x16" href="favicon/favicon-16x16.png">
-		<link rel="icon" sizes="32x32" href="favicon/favicon-32x32.png">
-		<link rel="icon" sizes="48x48" href="favicon.ico">
-		<link rel="icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-		<link rel="icon" sizes="192x192" href="favicon/android-chrome-192x192.png">
-		<link rel="icon" sizes="512x512" href="favicon/android-chrome-512x512.png">
+	<link rel="icon" sizes="16x16" href="./assets/appicon/favicon-16x16.png">
+	<link rel="icon" sizes="32x32" href="./assets/appicon/favicon-32x32.png">
+	<link rel="icon" sizes="48x48" href="./favicon.ico">
+	<link rel="icon" sizes="180x180" href="./assets/appicon/apple-touch-icon.png">
+	<link rel="icon" sizes="192x192" href="./assets/appicon/android-chrome-192x192.png">
+	<link rel="icon" sizes="512x512" href="./assets/appicon/android-chrome-512x512.png">
 
-		<link rel="apple-touch-icon" sizes="16x16" href="favicon/favicon-16x16.png">
-		<link rel="apple-touch-icon" sizes="32x32" href="favicon/favicon-32x32.png">
-		<link rel="apple-touch-icon" sizes="48x48" href="favicon.ico">
-		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-		<link rel="apple-touch-icon" sizes="192x192" href="favicon/android-chrome-192x192.png">
-		<link rel="apple-touch-icon" sizes="512x512" href="favicon/android-chrome-512x512.png">
+	<link rel="apple-touch-icon" sizes="16x16" href="./assets/appicon/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="32x32" href="./assets/appicon/favicon-32x32.png">
+	<link rel="apple-touch-icon" sizes="48x48" href="favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/appicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="192x192" href="./assets/appicon/android-chrome-192x192.png">
+	<link rel="apple-touch-icon" sizes="512x512" href="./assets/appicon/android-chrome-512x512.png">
 
+	<base href="/">
+	<link rel="stylesheet" href="./assets/styles/global/global.css">
+	<link rel="stylesheet" href="./assets/styles/global/layout.css">
+	<link rel="stylesheet" href="./assets/styles/global/main.css">
+	<link rel="stylesheet" href="./assets/styles/elements/mtf.css">
+	<link rel="stylesheet" href="./assets/styles/elements/home.css">
 
+</head>
 
-		<link rel="stylesheet" href="assets/styles/main.css">
-		<script src="main.js"></script>
-		<script type="module" src="app/appconfig.js" async defer></script>
-	</head>
-
-	<body>
-		<header>
-			<button class="backbtn">
-				Back
-			</button>
-			<div class="logo">
-				<img class="logo-cntrl logo-icon" src="favicon/android-chrome-512x512.png" alt="">
-				<h1 class="logo-cntrl logo-icon-text">Collect</h1>
+<body>
+	<header>
+		<div>
+			<img class="logo" src="./assets/appicon/android-chrome-512x512.png" alt="AppLogo">
+		</div>
+	</header>
+	<main>
+		<router-el></router-el>
+	</main>
+	<section data-id="installToast" style="display: none" class="install-toast">
+		<button>+</button>
+		<label>Add to Desktop </label>
+	</section>
+	<noscript>
+		<div class="no-js-error">
+			<div class="no-js-error-block">
+				<h3 class="no-js-error-text">Please Enable JavaScript and Reload!</h3>
 			</div>
-
-			<div data-element="loader" class="loader">
-				<div class="ldr-ring">
-					<span  data-element="loader-text"class="ldr-text">100%</span>
-				</div>
-			</div>
-		</header>
-		<section id="installBanner" class="banner">
-			<button id="installBtn">+</button>
-			<label for="installBtn">Install app</label>
-		</section>
-		<main router-outlet></main>
-	</body>
-
-	<template template-name="list">
-		<section class="card">
-			<h4 ></h4>
-			<h4></h4>
-			<p>
-				Bavarian bergkase port-salut ricotta. Cheese on toast say cheese cheese
-				strings pecorino fromage frais roquefort danish fontina emmental.
-				Bishop everyone loves jarlsberg stilton swiss cauliflower cheese fondue
-				wiss. Cottage cheese lancashire taleggio goat parmesan.
-			</p>
-		</section>
-	</template>
-	<template template-name="view">
-		<p> view page </p>
-	</template>
+		</div>
+	</noscript>
+</body>
 
 </html>
