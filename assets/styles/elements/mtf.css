@@ -112,7 +112,7 @@ mtf-el {
     display: grid;
     grid-template-columns: 300px 300px;
     grid-template-rows: 1fr;
-    --mtf-bg: #ffffff;
+
 }
 
 
@@ -125,6 +125,7 @@ mtf-el {
     position: relative;
     user-select: none;
     cursor: move;
+    --mtf-bg: #ffffff;
 }
 .mtf-block.status-correct{
     --mtf-bg: #e2ffd9;
