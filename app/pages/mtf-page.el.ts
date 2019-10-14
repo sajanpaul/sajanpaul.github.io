@@ -1,55 +1,122 @@
 import { MtfEl } from './../elements/mtf.el';
-import { IMTF, IPremise , IResponse  } from  './../../../types/mtf'
+import { IMTF, IPremise, IResponse } from './../../../types/mtf'
 
 export class MtfPageEl extends HTMLElement {
 
 
 	el = {
-		mtfEl:<MtfEl>null,
-		textArea: <HTMLElement>null,
+		mtfEl: <MtfEl>null,
+		textArea: <HTMLTextAreaElement>null,
 		errorLog: <HTMLElement>null,
+		errorList: <HTMLElement>null,
 
-	}
-
+	};
+	_parsedData: IMTF = null;
 	constructor() {
 		super();
 	}
 
 	connectedCallback() {
-		const parsedData : IMTF = {
-			premiseList:[
-				{ id: 1, text: 'Kerala' },
-				{ id: 2, text: 'Telangana' },
-				{ id: 3, text: 'Karnataka' },
-				{ id: 4, text: 'Uttarakhand' },
-				{ id: 5, text: 'Punjab' },
-			],
-			responseList:[
-				{ id: 1, text: 'Thiruvananthapuram' },
-				{ id: 2, text: 'Hyderabad' },
-				{ id: 3, text: 'Bengaluru' },
-				{ id: 4, text: 'Dehradun' },
-				{ id: 5, text: 'Chandigarh' },
-			],
-		}
+
 		const template =/* html */`
 		<div class="flex-child mtf-wrapper">
 			<mtf-el data-element="mtf-el"></mtf-el>
 		</div>
 		<div class="flex-child json-box">
-			<textarea>	</textarea>
+			<textarea class="json-text-area">	</textarea>
 		</div>
-		<div class="flex-child error-logger"></div>
+		<div class="flex-child error-logger">
+			<div class="btn-panel">
+				<button data-click-action="apply">Apply</button>
+				<button  data-click-action="reset"> Reset</button>
+				<button  data-click-action="check">Check</button>
+				<button  data-click-action="copy">Copy</button>
+				<button  data-click-action="clear">Clear</button>
+			</div>
+			
+			<details open>
+				<summary>Catch Errors</summary>
+				<div class="error-list">
+
+				</div>
+			</details>
+		</div>
 	`;
 
 
 		this.innerHTML = template;
 		this.classList.add('grid-parent');
-		this.el.mtfEl = document.querySelector('[data-element="mtf-el"]')
-		this.el.mtfEl.mtfData = parsedData;
+		this.el.mtfEl = this.querySelector('[data-element="mtf-el"]');
+		this.el.textArea = this.querySelector('.json-text-area');
+		this.el.errorList = this.querySelector('.error-list');
+
+		this.querySelectorAll('[data-click-action]')
+			.forEach(x => x.addEventListener('click', this.actionHandler));
+		this.reset();
+	}
+
+	reset() {
+		this._parsedData = {
+			premiseList: [
+				{ id: 1, text: 'Kerala' },
+				{ id: 2, text: 'Telangana' },
+				{ id: 3, text: 'Karnataka' },
+				{ id: 4, text: 'Uttarakhand' },
+				{ id: 5, text: 'Punjab' },
+				{ id: 6, text: 'Bihar' },
+			],
+			responseList: [
+				{ id: 1, text: 'Thiruvananthapuram' },
+				{ id: 2, text: 'Hyderabad' },
+				{ id: 3, text: 'Bengaluru' },
+				{ id: 4, text: 'Dehradun' },
+				{ id: 5, text: 'Chandigarh' },
+				{ id: 6, text: 'Patna' },
+
+			],
+		};
+		this.el.textArea.value = JSON.stringify(this._parsedData, null, 2);
+		this.el.mtfEl.mtfData = this._parsedData;
+
+	}
+	actionHandler = (event: MouseEvent) => {
+		let key = (event.target as HTMLElement).dataset.clickAction;
+		switch (key) {
+			case 'apply':
+				this.apply();
+				break;
+			case 'reset':
+				this.reset();
+				break;
+			case 'check':
+				this.el.mtfEl.check();
+				break;
+			case 'copy':
+				this.el.textArea.select()
+				document.execCommand('copy',null,null)
+				this.el.textArea.setSelectionRange(0,0);
+				break;
+			case 'clear':
+				this.el.errorList.innerHTML = '';
+				break;
+		}
+	}
+
+	apply() {
+		try {
+			this._parsedData = JSON.parse(this.el.textArea.value);
+			let jsonNewString = JSON.stringify(this._parsedData, null, 2);
+			this.el.textArea.value = jsonNewString
+			this.el.mtfEl.mtfData = JSON.parse(jsonNewString);
+			this.el.errorList.innerText = '';
+		} catch (e) {
+			this.el.errorList.innerText = e.toString();
+		}
 	}
 
 	disconnectedCallback() {
+		this.querySelectorAll('[data-click-action]')
+			.forEach(x => x.removeEventListener('click', this.actionHandler));
 		/**
 		* @description Called every time the element is removed from the DOM. Useful for running clean up code.
 		*/
@@ -69,10 +136,7 @@ export class MtfPageEl extends HTMLElement {
 		(e.g. someone called document.adoptNode(el)).
 		*/
 	}
-	set mtfData(_data: IMTF) {
 
-
-	}
 
 
 }

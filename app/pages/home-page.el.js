@@ -1,9 +1,4 @@
 export class HomePage extends HTMLElement {
-    /**
-    @author: Sajan Paul,
-    @date: 20- 09- 2019,
-    @description : Description
-    */
     constructor() {
         super();
         /**
@@ -16,13 +11,29 @@ export class HomePage extends HTMLElement {
         this.innerHTML = /*html*/ `
 		<div class="card-container" data-element="card-holder-page">
 		<div class="menu-area">
-		
+			<ol>
+			<li>
+				<a href="#mtf"> Match the following</a>
+				<div><samp>MouseOnly</samp>  <samp>NoAutoScroll</samp> <samp>Completed</samp></div>
+			</li>
+			<li>
+				<a href="#grid"  disabled="disabled">SpreadSheet</a>
+				<div><samp>MouseOnly</samp>  <samp>InProgress</samp></div>
+			</li>
+			<li>
+				<a href="#crop"   disabled="disabled">Image Cropping</a>
+				<div><samp>MouseOnly</samp>  <samp>InProgress</samp></div>
+			</li>
+			<li>
+				<a href="https://github.com/sajanpaul/sajanp">Source Code</a>
+				<div><samp>Github</samp>  <samp>SouceCode</samp></div>
+			</li>
+			</ol>
 		</div>
 		<div class="greeting-buble">
 			<div class="bubble-title">
-				<h1 class="bubble-title">Hey</h1>
-				<p class="bubble-text"> Goodmorning, How are you? This is just a demo card.
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi voluptate deleniti!. </p>
+				<h1 class="bubble-title"> <span class="min-greet">Hey</span>  <span class="welcome-greet">Welcome</span>  </h1>
+				<div class="bubble-text">Click match the following <br> link to open demo </div>
 			</div>
 		</div>
 		</div>

@@ -3,6 +3,39 @@
     height: 100%;
     width: 100%;
     background-color: var(--color_dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-area ol {
+    font-family: 'Overpass';
+    font-size: 18px;
+    color: #e3fdfd;
+}
+.menu-area ol  li {
+    margin: 30px;
+}
+.menu-area ol  li a,
+.menu-area ol  li a:active {
+    text-decoration: none;
+    color: #e3fdfd;
+}
+.menu-area ol  li a:hover,
+.menu-area ol  li a:focus{
+    color: #ffffff;
+}
+.menu-area ol  li a[disabled] {
+    color: #a9a9a9;
+    pointer-events: none;
+    cursor: default;
+}
+.menu-area ol  li samp {
+    font-family: 'Overpass mono';
+    font-size: 10px;
+    color: #e3fdfd;
+    background-color: #299096;
+    padding: 4px;
+    display: inline-block;
 }
 .greeting-buble{
     width: 100px;
@@ -14,6 +47,32 @@
     bottom: 0px;
     right: 150px;
     display: none;
+}
+.greeting-buble:hover .bubble-text{
+    display: block;
+
+}
+
+.greeting-buble .min-greet{
+    display: initial;
+}
+.greeting-buble:hover .min-greet{
+    display: none;
+}
+.greeting-buble .welcome-greet{
+    display: none;
+}
+.greeting-buble:hover .welcome-greet{
+    display: initial;
+}
+.greeting-buble:hover{
+    display: block;
+    border-radius: 5px;
+    width: 240px;
+    height: 140px;
+    transition-property: width, height, border-radius;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
 }
 .bubble-title {
    text-align: center;

@@ -4,7 +4,8 @@ export class NotFoundPage extends HTMLElement {
 
 		let tmpl = document.createElement('template');
 		tmpl.innerHTML = /* html */`
-		<div> Not found  Page </div>
+		<p> Page Not Found  <a href="#home"> Take me to home</a> </p>
+		
 		`;
 		let shadowRoot = this.attachShadow({ mode: "closed" });
 		shadowRoot.appendChild(tmpl.content.cloneNode(true));
