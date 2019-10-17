@@ -50,6 +50,7 @@
 }
 .greeting-buble:hover .bubble-text{
     display: block;
+    font-family: 'Overpass'
 
 }
 

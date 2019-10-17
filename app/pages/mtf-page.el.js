@@ -41,11 +41,11 @@ export class MtfPageEl extends HTMLElement {
 		</div>
 		<div class="flex-child error-logger">
 			<div class="btn-panel">
-				<button data-click-action="apply">Apply</button>
-				<button  data-click-action="reset"> Reset</button>
-				<button  data-click-action="check">Check</button>
-				<button  data-click-action="copy">Copy</button>
-				<button  data-click-action="clear">Clear</button>
+				<button title="Apply JSON to MTF Element" data-click-action="apply">Apply</button>
+				<button title="Reset to  hardcoded JSON" data-click-action="reset"> Reset</button>
+				<button title="Check Answer" data-click-action="check">Check</button>
+				<button title="Copy JSON" data-click-action="copy">Copy</button>
+				<button  title="Clear Error List" data-click-action="clear">Clear</button>
 			</div>
 			
 			<details open>

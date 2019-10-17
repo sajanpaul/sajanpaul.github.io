@@ -1,8 +1,6 @@
 // self.skipWaiting();
 const staticCacheName = 'pages-cache-v1';
 const filesToCache = [
-    'index.html',
-    'assets/static-pages/offline.html'
 ];
 self.addEventListener('install', event => {
     console.log('Attempting to install service worker and cache static assets');
@@ -31,7 +29,6 @@ self.addEventListener('fetch', event => {
                 });
             }).catch(error => {
                 console.log('Error, ', error);
-                return caches.match('pages/offline.html');
             })
     );
 });

@@ -19,7 +19,7 @@ export class HomePage extends HTMLElement {
 			<ol>
 			<li>
 				<a href="#mtf"> Match the following</a>
-				<div><samp>MouseOnly</samp>  <samp>NoAutoScroll</samp> <samp>Completed</samp></div>
+				<div><samp>MouseOnly</samp>  <samp>NoAutoScroll</samp> <samp>Testing</samp></div>
 			</li>
 			<li>
 				<a href="#grid"  disabled="disabled">SpreadSheet</a>
@@ -38,7 +38,7 @@ export class HomePage extends HTMLElement {
 		<div class="greeting-buble">
 			<div class="bubble-title">
 				<h1 class="bubble-title"> <span class="min-greet">Hey</span>  <span class="welcome-greet">Welcome</span>  </h1>
-				<div class="bubble-text">Click match the following <br> link to open demo </div>
+				<div class="bubble-text">Click 'Match the following' <br> link to open demo </div>
 			</div>
 		</div>
 		</div>

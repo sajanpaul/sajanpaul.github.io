@@ -76,7 +76,7 @@ export class MtfEl extends HTMLElement {
 			_arr.forEach((x) => mapObj[x.id] = x);
 			let unique = Object.values(mapObj) as Array<IPremise | IResponse>;
 			if (_arr.length !== unique.length) {
-				throw 'id should be unique'
+				throw 'the id should be unique'
 			}
 			return unique;
 		};
@@ -85,9 +85,9 @@ export class MtfEl extends HTMLElement {
 		this.MTF.premiseList = duplicateFilter(this.MTF.premiseList);
 		this.MTF.responseList = duplicateFilter(this.MTF.responseList);
 		if (this.MTF.premiseList.length > 10 || this.MTF.responseList.length > 10) {
-			throw 'Premise and response length should be less than 10'
+			throw 'Premise and Response length should be less than 10'
 		} else if (this.MTF.premiseList.length !== this.MTF.responseList.length) {
-			throw 'Premise and response length should be equal'
+			throw 'Premise and Response length should be equal'
 		} else {
 			for (let premise of this.MTF.premiseList) {
 				// premise
@@ -96,14 +96,14 @@ export class MtfEl extends HTMLElement {
 					premise.responseRef = response;
 					response.premiseRef = premise;
 				} else {
-					throw 'Failed find response of premise, id =' + premise.id;
+					throw 'Failed to find the Response of premise, id =' + premise.id;
 				}
 
 				if (!(premise && !Number.isNaN(parseInt(premise.id + '')) && (premise.text || '').trim() !== '')) {
-					throw 'invalid ID or  text in premise, id =' + premise.id;
+					throw 'invalid ID or  text in thePremise, id =' + premise.id;
 
 				} else if (!(response && !Number.isNaN(parseInt(response.id + '')) && (response.text || '').trim() !== '')) {
-					throw 'invalid ID or text in response, id =' + response.id;
+					throw 'invalid ID or text in the Response, id =' + response.id;
 				} else {
 					premise.element = document.createElement('div');
 					premise.element.classList.add('premise', 'mtf-block');

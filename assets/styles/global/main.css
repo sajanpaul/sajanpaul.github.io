@@ -13,6 +13,17 @@ header {
 header .logo{
     width: 30px;
 }
+header .craft{
+    display: inline-block;
+    /* vertical-align: middle; */
+    padding: 0px;
+    font-size: 12px;
+    font-family: 'Overpass mono';
+    color: #cecece;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
 button#installBtn {
     background-color: #209cee;
     border: 1px solid #104568;
