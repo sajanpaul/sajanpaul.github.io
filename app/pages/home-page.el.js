@@ -27,14 +27,14 @@ export class HomePage extends HTMLElement {
 						<div><samp>MouseOnly</samp> <samp>InProgress</samp></div>
 					</li>
 					<li>
-						<a href="https://github.com/sajanpaul/sajanpaul.github.io"><img class="github-icon" src="./assets/icons/github.svg"> Source Code</a>
+						<a href="https://github.com/sajanpaul/sajanp" target="_blank"><img class="github-icon" src="./assets/icons/github.svg"> Source Code</a>
 						<div><samp>Github</samp> <samp>Source Code</samp></div>
 					</li>
 				</ol>
 				<p class="main-content">
 					The site is entirely handcrafted with JS(TS), CSS(SCSS), and HTML,
 					<br>
-					check my <a  href="https://github.com/sajanpaul/sajanpaul.github.io" target="_blank">GitHub repository</a> for more information.
+					check my <a  href="https://github.com/sajanpaul/sajanp" target="_blank">GitHub repository</a> for more information.
 				</p>
 				<p class="remarks">
 					The website and its contents are not intended to be in production quality, 

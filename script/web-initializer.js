@@ -18,27 +18,26 @@
             });
         });
     }
-    let deferredPrompt;
-    window.addEventListener('beforeinstallprompt', (event) => {
-        event.preventDefault();
-        deferredPrompt = event;
-        const installToast = document.querySelector('[data-id="installToast"]');
-        if (installToast) {
-            installToast.addEventListener('click', event => {
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice
-                    .then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        console.log('User accepted the A2HS prompt');
-                    }
-                    else {
-                        console.log('User dismissed the A2HS prompt');
-                    }
-                    deferredPrompt = null;
-                });
-            });
-            installToast.style.display = '';
-        }
-    });
+    // let deferredPrompt:any;
+    // window.addEventListener('beforeinstallprompt', (event:any) => {
+    // 	event.preventDefault();
+    // 	deferredPrompt = event;
+    // 	const installToast = document.querySelector('[data-id="installToast"]') as HTMLElement;
+    // 	if (installToast) {
+    // 		installToast.addEventListener('click', event => {
+    // 			deferredPrompt.prompt();
+    // 			deferredPrompt.userChoice
+    // 				.then((choiceResult:any) => {
+    // 					if (choiceResult.outcome === 'accepted') {
+    // 						console.log('User accepted the A2HS prompt');
+    // 					} else {
+    // 						console.log('User dismissed the A2HS prompt');
+    // 					}
+    // 					deferredPrompt = null;
+    // 				});
+    // 		});
+    // 		installToast.style.display = '';
+    // 	}
+    // });
 }());
 //# sourceMappingURL=web-initializer.js.map
